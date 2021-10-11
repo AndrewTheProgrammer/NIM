@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NIM</title><script>
+function Move(n){
+	if (p!=0){
+		p-=4;
+		document.getElementById("move").innerHTML="You removed "+n+" pin(s) leaving "+(p-n+4)+" pin(s). <br>The computer removed "+(4-n)+" pin(s) leaving "+p+" pin(s).";
+		if (p==0){
+			document.getElementById("question").innerHTML="The computer has removed the last pin and won. Press Reset to play again.";
+}}}
+function Set(){
+	p=12;
+	document.getElementById("move").innerHTML="You move first.<br>There are 12 pins.";
+	document.getElementById("question").innerHTML="How many pins would you like to remove?";
+}
+Set();</script></head><body>
+There are 12 pins to start. You and the computer take turns removing 1, 2, or 3 pins. The one that takes the last pin wins.<br>
+<div id="question">How many pins would you like to remove?</div>
+<button onclick="Move(1)">1</button><button onclick="Move(2)">2</button><button onclick="Move(3)">3</button>
+<div id="move">You move first.<br>There are 12 pins.</div>
+<button onclick="Set()">Reset</button>
+</body></html>
